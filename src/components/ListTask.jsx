@@ -8,9 +8,12 @@ const ListTask = ({ tasks, setTasks }) => {
   const [closed, setClosed] = useState([])
 
   useEffect(() => {
-    const fTodos = tasks.filter((task) => task.status === "todo")
-    const fInProgress = tasks.filter((task) => task.status === "inProgress")
-    const fClosed = tasks.filter((task) => task.status === "closed")
+    const tasksArray = tasks || []
+    const fTodos = tasksArray.filter((task) => task.status === "todo")
+    const fInProgress = tasksArray.filter(
+      (task) => task.status === "inProgress"
+    )
+    const fClosed = tasksArray.filter((task) => task.status === "closed")
 
     setTodos(fTodos)
     setInProgress(fInProgress)
@@ -128,7 +131,7 @@ const Task = ({ task, tasks, setTasks }) => {
     >
       <p>{task.name}</p>
       <button
-        className="absolute bottom-2 right-1 text-slate-400"
+        className="absolute bottom-1 right-1 text-slate-400"
         onClick={() => handleRemove(task.id)}
       >
         <svg

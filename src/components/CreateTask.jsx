@@ -17,7 +17,7 @@ const CreateTask = ({ tasks, setTasks }) => {
     if (task.name.length > 100)
       return toast.error("A task must not be more than 100 characters")
     setTasks((prev) => {
-      const list = [...prev, task]
+      const list = prev ? [...prev, task] : [task]
       localStorage.setItem("tasks", JSON.stringify(list))
       return list
     })
