@@ -33,7 +33,7 @@ const CreateTask = ({ tasks, setTasks }) => {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        className="border-2 border-slate-400 bg-slate-100 rounded-md px-1 mr-4 h-12 w-64"
+        className="border border-gray-400 bg-gray-600 rounded-md px-1 mr-4 h-12 w-64"
         value={task.name}
         onChange={(e) =>
           setTask({ ...task, id: uuidv4(), name: e.target.value })

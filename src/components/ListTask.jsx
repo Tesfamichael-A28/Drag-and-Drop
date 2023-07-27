@@ -22,7 +22,7 @@ const ListTask = ({ tasks, setTasks }) => {
 
   const statuses = ["todo", "inProgress", "closed"]
   return (
-    <div className="flex gap-16">
+    <div className="md:flex xl:gap-16 lg:gap-8 text-gray-300">
       {statuses.map((status, index) => (
         <Section
           key={index}
@@ -83,7 +83,7 @@ const Section = ({ status, tasks, setTasks, todos, inProgress, closed }) => {
   return (
     <div
       ref={drop}
-      className={`w-64 rounded-md p-2 ${isOver ? "bg-slate-200" : ""}`}
+      className={`w-64 rounded-md p-2 mb-4 ${isOver ? "bg-gray-500" : ""}`}
     >
       <Header text={text} bg={bg} count={tasksToMap.length} />
       {tasksToMap.length > 0 &&
@@ -99,7 +99,7 @@ const Header = ({ text, bg, count }) => {
       className={`${bg} flex items-center h-12 pl-4 rounded-md uppercase text-sm text-white`}
     >
       {text}
-      <div className="ml-2 bg-white w-5 h-5 text-black rounded-full flex items-center justify-center ">
+      <div className="ml-2 bg-black w-5 h-5 text-gray-300 rounded-full flex items-center justify-center ">
         {count}
       </div>
     </div>
